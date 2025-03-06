@@ -1,0 +1,14 @@
+<div class="hoteles-container">
+    <mat-card *ngFor="let hotel of hoteles" class="hotel-card">
+      <mat-card-header>
+        <mat-card-title>{{ hotel.nombre }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="hotel.imagen" alt="{{ hotel.nombre }}" />
+      <mat-card-content>
+        <p>{{ hotel.descripcion }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary">Ver más</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
