@@ -5,6 +5,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { FooterComponent } from './components/footer/footer.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { HotelesComponent } from './components/hoteles/hoteles.component';
+import { CrudComponent } from './pages/crud/crud.component';
 
 
 @Component({
@@ -14,7 +15,8 @@ import { HotelesComponent } from './components/hoteles/hoteles.component';
     NavbarComponent,
     FooterComponent,
     LandingPageComponent,
-    HotelesComponent
+    HotelesComponent,
+    CrudComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
