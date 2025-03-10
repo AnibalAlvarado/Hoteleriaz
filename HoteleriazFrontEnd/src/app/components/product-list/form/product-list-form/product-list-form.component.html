@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>
+    {{ data.mode === 'create' ? 'Agregar Producto' : 
+       data.mode === 'edit' ? 'Editar Producto' : 
+       'Eliminar Producto' }}
+  </h2>
+  
+  <mat-dialog-content *ngIf="data.mode !== 'delete'">
+    <form [formGroup]="productForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre del Producto</mat-label>
+        <input matInput formControlName="name" placeholder="Ej. Angular T-Shirt" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Categoría</mat-label>
+        <input matInput formControlName="category" placeholder="Ej. Merchandise" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Precio</mat-label>
+        <input matInput formControlName="price" type="number" placeholder="Ej. 19.99" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Imagen (URL)</mat-label>
+        <input matInput formControlName="image" placeholder="URL de la imagen" />
+      </mat-form-field>
+  
+      <div class="image-preview">
+        <img *ngIf="productForm.get('image')?.value" [src]="productForm.get('image')?.value" alt="Vista previa" />
+      </div>
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-content *ngIf="data.mode === 'delete'">
+    <p>¿Estás seguro de que deseas eliminar este producto?</p>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-button color="primary" *ngIf="data.mode !== 'delete'">Guardar</button>
+    <button mat-button color="warn" *ngIf="data.mode === 'delete'">Eliminar</button>
+  </mat-dialog-actions>
+  

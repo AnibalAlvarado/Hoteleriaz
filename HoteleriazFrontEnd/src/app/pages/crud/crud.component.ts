@@ -1,9 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ProductListComponent } from '../../components/product-list/index/product-list.component';
+import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-crud',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule,ProductListComponent,SidebarComponent],
   templateUrl: './crud.component.html',
   styleUrl: './crud.component.scss'
 })

@@ -1,0 +1,31 @@
+.crud-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  app-sidebar {
+    width: 250px; /* Define un ancho fijo para la barra lateral */
+    flex-shrink: 0;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start; /* Alinea los productos a la izquierda */
+    align-items: flex-start;
+  }
+  
+  app-product-list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los productos se ajusten si no hay espacio */
+    gap: 20px; /* Espaciado entre productos */
+  }
+  .product-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* Alinea los productos a la izquierda */
+    align-items: flex-start;
+    width: 100%; /* Ocupa todo el espacio disponible */
+  }
