@@ -1,0 +1,26 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidebar">
+    <h2>Filtros</h2>
+    <mat-list>
+      <mat-list-item>
+        <a routerLink="/crud" routerLinkActive="active">Todos los Hoteles</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a [routerLink]="['/crud']" [queryParams]="{ category: '5 Estrellas' }">5 Estrellas</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a [routerLink]="['/crud']" [queryParams]="{ category: '4 Estrellas' }">4 Estrellas</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a [routerLink]="['/crud']" [queryParams]="{ category: '3 Estrellas' }">3 Estrellas</a>
+      </mat-list-item>
+    </mat-list>
+
+    <div class="price-filter">
+      <label for="price">Filtrar por precio</label>
+      <mat-slider min="50" max="500" step="50" (input)="applyPriceFilter($event)">
+        <input matSliderThumb>
+      </mat-slider>
+    </div>
+  </mat-sidenav>
+</mat-sidenav-container>

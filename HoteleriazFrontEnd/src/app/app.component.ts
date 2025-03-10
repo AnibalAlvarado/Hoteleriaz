@@ -6,6 +6,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { HotelesComponent } from './components/hoteles/hoteles.component';
 import { CrudComponent } from './pages/crud/crud.component';
+import { ProductListComponent } from './components/product-list/index/product-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @Component({
@@ -16,7 +18,9 @@ import { CrudComponent } from './pages/crud/crud.component';
     FooterComponent,
     LandingPageComponent,
     HotelesComponent,
-    CrudComponent
+    CrudComponent,
+    ServiciosComponent,
+    ProductListComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

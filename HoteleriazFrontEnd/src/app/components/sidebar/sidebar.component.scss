@@ -1,0 +1,48 @@
+.sidenav-container {
+    height: 100%;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 20px;
+
+  }
+  
+  h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  mat-list {
+    width: 100%;
+  }
+  
+  mat-list-item {
+    padding: 10px 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #bbb;
+    font-size: 16px;
+    display: block;
+    padding: 5px;
+    transition: color 0.3s;
+  
+    &:hover,
+    &.active {
+      color: white;
+      font-weight: bold;
+    }
+  }
+  
+  .price-filter {
+    margin-top: 20px;
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+  }
