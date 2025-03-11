@@ -15,11 +15,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class client extends GenericModel {
-    private String name;
-    private String email;
-    private String phone;
+    private String Name;
+    private String Email;
+    private String Phone;
 
     @OneToMany(mappedBy = "client")
-    private List<Booking> bookings;
+    private List<Booking> Bookings;
 }
 
