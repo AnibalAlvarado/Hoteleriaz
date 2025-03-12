@@ -2,7 +2,6 @@ package com.sena.crud_basic.model;
 
 import java.util.List;
 
-import org.springframework.boot.autoconfigure.integration.IntegrationProperties.RSocket.Client;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -22,8 +21,8 @@ public class Booking extends GenericModel {
     
     @ManyToOne
     @JoinColumn(name = "ClientId")
-    private Client Client;
-    
+    private client Clients;
+
     @OneToMany(mappedBy = "Booking")
     private List<BookingDetail> BookingDetails;
 }
