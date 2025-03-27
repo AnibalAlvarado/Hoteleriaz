@@ -1,8 +1,5 @@
 package com.sena.crud_basic.service;
 
-
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,22 +21,23 @@ public class ClientService extends GenericService<client, ClientDto> {
 
     @Override
     protected client convertToModel(ClientDto dto) {
-        client clientEntity = new client();
-        dto.getId().ifPresent(clientEntity::setId);
-        dto.getName().ifPresent(clientEntity::setName);
-        dto.getEmail().ifPresent(clientEntity::setEmail);
-        dto.getPhone().ifPresent(clientEntity::setPhone);
-        return clientEntity;
+      
+        return new client(
+            0,
+            dto.getName(),
+            dto.getEmail(),
+            dto.getPhone()
+            );  
     }
 
     @Override
     protected ClientDto convertToDTO(client model) {
-        ClientDto dto = new ClientDto();
-        dto.setId(Optional.ofNullable(model.getId()));
-        dto.setName(Optional.ofNullable(model.getName()));
-        dto.setEmail(Optional.ofNullable(model.getEmail()));
-        dto.setPhone(Optional.ofNullable(model.getPhone()));
-        return dto;
+        
+          return new ClientDto(
+            model.getName(),
+            model.getEmail(),
+            model.getPhone()
+        );
     }
     
 }

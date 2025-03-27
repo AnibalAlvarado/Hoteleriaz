@@ -9,7 +9,7 @@ import java.util.Optional;
 public abstract class GenericService<T, D> {
 
     @Autowired
-    protected JpaRepository<T, Long> repository;
+    protected JpaRepository<T, Integer> repository;
 
     // Método abstracto para conversión de DTO a Modelo
     protected abstract T convertToModel(D dto);
@@ -29,12 +29,12 @@ public abstract class GenericService<T, D> {
     }
 
     // Buscar por ID
-    public Optional<T> findById(Long id) {
+    public Optional<T> findById(Integer id) {
         return repository.findById(id);
     }
 
     // Eliminar por ID
-    public void delete(Long id) {
+    public void delete(Integer id) {
         repository.deleteById(id);
     }
 }

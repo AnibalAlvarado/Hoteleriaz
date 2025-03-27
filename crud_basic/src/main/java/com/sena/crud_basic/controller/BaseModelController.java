@@ -10,7 +10,7 @@ import java.util.Optional;
 public abstract class BaseModelController<T, D> {
 
     protected final GenericService<T, D> service;
-
+    
     public BaseModelController(GenericService<T, D> service) {
         this.service = service;
     }
@@ -29,14 +29,14 @@ public abstract class BaseModelController<T, D> {
 
     // Buscar por ID
     @GetMapping("/{id}")
-    public ResponseEntity<T> findById(@PathVariable Long id) {
+    public ResponseEntity<T> findById(@PathVariable Integer id) {
         Optional<T> entity = service.findById(id);
         return entity.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     // Eliminar por ID
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.sena.crud_basic.model.Payment;
 
-public interface IPaymentRepository extends JpaRepository<Payment, Long> {
+public interface IPaymentRepository extends JpaRepository<Payment, Integer> {
 
 }

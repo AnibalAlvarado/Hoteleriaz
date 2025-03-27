@@ -1,6 +1,5 @@
 package com.sena.crud_basic.DTOs;
-
-import java.util.Optional;
+import com.sena.crud_basic.model.Hotel;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +7,14 @@ import lombok.Setter;
 @Getter
 @Setter
 public class RoomDto extends GenericDto {
-    private Optional<Long> HotelId = Optional.empty();
-    private Optional<String> Type = Optional.empty();
-    private Optional<Double> Price = Optional.empty();
+    public RoomDto() {
+    }
+    public RoomDto(String type, Double price, Hotel hotelId) {
+        HotelId = hotelId;
+        Type = type;
+        Price = price;
+    }
+    private String Type;
+    private Double Price ;
+    private Hotel HotelId;
 }

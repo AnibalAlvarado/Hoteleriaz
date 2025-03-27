@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.sena.crud_basic.model.Room;
 
-public interface IRoomRepository extends JpaRepository<Room, Long> {
+public interface IRoomRepository extends JpaRepository<Room, Integer> {
 
 }

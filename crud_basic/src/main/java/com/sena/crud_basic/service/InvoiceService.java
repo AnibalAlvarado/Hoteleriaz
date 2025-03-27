@@ -1,13 +1,7 @@
 package com.sena.crud_basic.service;
-
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.sena.crud_basic.DTOs.HotelDto;
 import com.sena.crud_basic.DTOs.InvoiceDto;
-import com.sena.crud_basic.model.Hotel;
 import com.sena.crud_basic.model.Invoice;
 import com.sena.crud_basic.repository.IInvoiceRepository;
 
@@ -24,15 +18,24 @@ public class InvoiceService extends GenericService<Invoice,InvoiceDto> {
 
      @Override
     protected Invoice convertToModel(InvoiceDto dto) {
-        Invoice invoiceEntity = new Invoice();
-        dto.getId().ifPresent(invoiceEntity::setId);
-        return invoiceEntity;
+
+        return new Invoice(
+            0,
+            dto.getDate(),
+            dto.getAmount(),
+            dto.getBookingId()
+            );  
     }
 
     @Override
     protected InvoiceDto convertToDTO(Invoice model) {
-        InvoiceDto dto = new InvoiceDto();
-        dto.setId(Optional.ofNullable(model.getId()));
-        return dto;
+        // InvoiceDto dto = new InvoiceDto();
+        // dto.setId(Optional.ofNullable(model.getId()));
+        // return dto;
+        return new InvoiceDto(
+            model.getDate(),
+            model.getAmount(),
+            model.getBookingId()
+        );
     }
 }
