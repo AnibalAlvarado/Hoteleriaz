@@ -21,6 +21,11 @@ public abstract class BaseModelController<T, D> {
         return ResponseEntity.ok(service.save(dto));
     }
 
+    @PutMapping
+    public ResponseEntity<T> update(@PathVariable int id,@RequestBody D dto) {
+        return ResponseEntity.ok(service.update(id,dto));
+    }
+
     // Obtener todos los registros
     @GetMapping
     public ResponseEntity<List<T>> findAll() {
